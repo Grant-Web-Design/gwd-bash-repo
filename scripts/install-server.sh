@@ -28,7 +28,7 @@ MAX_NODE_VERSION=15.0.0
 MIN_NPM_VERSION=6.0.0
 
 INSTALLED_NODE_VERSION="$(node --version | head -1)"
-INSTALLED_NPM_VERSION="$(npm --version | head -1)"
+INSTALLED_NPM_VERSION="$(npm --version | head)"
 
 echo "Installed node version: ${INSTALLED_NODE_VERSION}"
 echo "Installed npm version: ${INSTALLED_NPM_VERSION}"
@@ -41,13 +41,13 @@ else
   exit 1
 fi
 
-if version_gt $INSTALLED_NODE_VERSION $MAX_NODE_VERSION;
-then
-  echo "Incorrect version of node installed, highest allowed version is ${MAX_NODE_VERSION}"
-  exit 1
-else
-  echo "Node satisfies maximum required version"
-fi
+# if version_gt $INSTALLED_NODE_VERSION $MAX_NODE_VERSION;
+# then
+#   echo "Incorrect version of node installed, highest allowed version is ${MAX_NODE_VERSION}"
+#   exit 1
+# else
+#   echo "Node satisfies maximum required version"
+# fi
 
 if version_gt $INSTALLED_NPM_VERSION $MIN_NPM_VERSION;
 then
