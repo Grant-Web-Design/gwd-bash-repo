@@ -8,20 +8,20 @@ echo "Checking if we're running with sudo rights"
 
 timeout -s SIGKILL 5s sudo -v && (echo "Sudo rights enabled" ; exit 0) || (echo "No sudo rights, please run this script with sudo" ; exit 1)
 
-echo ""
-echo "Updating apt-get repository..."
-sudo apt-get update -y -qq
+# echo ""
+# echo "Updating apt-get repository..."
+# sudo apt-get update -y -qq
 
-echo "Installing git..."
-sudo apt-get install git -qq -y
+# echo "Installing git..."
+# sudo apt-get install git -qq -y
 
-echo "Installing Node 14 repository..."
-sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+# echo "Installing Node 14 repository..."
+# sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
 
-echo "Installing Node.js and NPM..."
-sudo apt-get install nodejs npm -qq -y
+# echo "Installing Node.js and NPM..."
+# sudo apt-get install nodejs npm -qq -y
 
-echo "Verifying Node.js and NPM versions"
+# echo "Verifying Node.js and NPM versions"
 
 
 # function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
@@ -62,8 +62,8 @@ echo "Installed npm version: ${INSTALLED_NPM_VERSION}"
 
 echo "Verified node and npm versions"
 
-echo "Installing git..."
-sudo apt-get install git -qq -y
+# echo "Installing git..."
+# sudo apt-get install git -qq -y
 
 echo "Required applications installed successfully"
 
