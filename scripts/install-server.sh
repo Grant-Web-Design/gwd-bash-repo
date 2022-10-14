@@ -1,5 +1,8 @@
 #!/bin/bash
 
+read -p "Hoe gaat het" HOE_GAAT_HET
+echo "Antwoord: ${HOE_GAAT_HET}"
+
 echo "Grant Web Design install-server script"
 echo "Checking if we're running with sudo rights"
 
@@ -65,10 +68,10 @@ sudo apt-get install git -qq -y
 echo "Required applications installed successfully"
 
 echo "Adding private Grant Web Design npm package registry"
+
 read -p "Please enter a GitHub access token that has access to the registry: " GITHUB_ACCESS_TOKEN
 
-sudo touch ~/.npmrc
-printf "//npm.pkg.github.com/:_authToken=${GITHUB_ACCESS_TOKEN}" > ~/.npmrc
+sudo echo "//npm.pkg.github.com/:_authToken=${GITHUB_ACCESS_TOKEN}" > ~/.npmrc
 
 echo "Installing gwd-server-installer package..."
 sudo npm i -g @grant-web-design/gwd-server-installer@latest
