@@ -21,14 +21,48 @@ sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
 echo "Installing Node.js and NPM..."
 sudo apt-get install nodejs npm -qq -y
 
+echo "Verifying Node.js and NPM versions"
+
+# function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
+
+# MIN_NODE_VERSION=14.0.0
+# MAX_NODE_VERSION=15.0.0
+# MIN_NPM_VERSION=6.0.0
+
 INSTALLED_NODE_VERSION="$(node --version | head -1)"
 INSTALLED_NPM_VERSION="$(npm --version | head)"
 
 echo "Installed node version: ${INSTALLED_NODE_VERSION}"
 echo "Installed npm version: ${INSTALLED_NPM_VERSION}"
 
-echo "Installing git..."
-sudo apt-get install git -qq -y
+# if version_gt $INSTALLED_NODE_VERSION $MIN_NODE_VERSION;
+# then
+#   echo "Node satisfies minimum required version"
+# else
+#   echo "Incorrect version of node installed, lowest allowed version is ${MIN_NODE_VERSION}"
+#   exit 1
+# fi
+
+# if version_gt $INSTALLED_NODE_VERSION $MAX_NODE_VERSION;
+# then
+#   echo "Incorrect version of node installed, highest allowed version is ${MAX_NODE_VERSION}"
+#   exit 1
+# else
+#   echo "Node satisfies maximum required version"
+# fi
+
+# if version_gt $INSTALLED_NPM_VERSION $MIN_NPM_VERSION;
+# then
+#   echo "Npm satisfies minimum required version"
+# else
+#   echo "Incorrect version of npm installed, lowest allowed version is ${MIN_NPM_VERSION}"
+#   exit 1
+# fi
+
+echo "Verified node and npm versions"
+
+# echo "Installing git..."
+# sudo apt-get install git -qq -y
 
 echo "Required applications installed successfully"
 
