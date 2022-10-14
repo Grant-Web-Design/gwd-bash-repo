@@ -21,7 +21,7 @@ sudo apt-get install nodejs npm -qq -y
 echo "Verifying Node.js and NPM versions"
 
 
-function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
+# function version_gt() { test "$(printf '%s\n' "$@" | sort -V | head -n 1)" != "$1"; }
 
 # MIN_NODE_VERSION=14.0.0
 # MAX_NODE_VERSION=15.0.0
