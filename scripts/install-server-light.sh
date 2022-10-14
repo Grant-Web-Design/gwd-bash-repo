@@ -16,7 +16,9 @@ echo "Installing git..."
 sudo apt-get install git -qq -y
 
 echo "Installing Node 14 repository..."
-sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+cd ~
+curl -sL https://deb.nodesource.com/setup_14.x -o setup_14.sh
+sudo sh ./setup_14.sh
 
 echo "Installing Node.js and NPM..."
 sudo apt-get install nodejs npm -qq -y
