@@ -1,8 +1,4 @@
 #!/bin/bash
-
-read -p "Hoe gaat het" HOE_GAAT_HET
-echo "Antwoord: ${HOE_GAAT_HET}"
-
 echo "Grant Web Design install-server script"
 echo "Checking if we're running with sudo rights"
 
@@ -21,7 +17,7 @@ curl -sL https://deb.nodesource.com/setup_14.x -o setup_14.sh
 sudo sh ./setup_14.sh
 
 echo "Installing Node.js and NPM..."
-sudo apt-get install -y nodejs
+sudo apt-get install -y nodejs 
 
 INSTALLED_NODE_VERSION="$(node --version | head -1)"
 INSTALLED_NPM_VERSION="$(npm --version | head)"
