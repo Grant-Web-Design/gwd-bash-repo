@@ -37,6 +37,7 @@ sudo echo "@grant-web-design:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${GITHUB_ACCESS_TOKEN}" > ~/.npmrc
 
 echo "Installing gwd-server-installer package..."
+sudo npm uninstall -g @grant-web-design/gwd-server-installer
 sudo npm i -g @grant-web-design/gwd-server-installer@latest
 
 echo "Starting the installer..."
